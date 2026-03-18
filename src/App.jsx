@@ -243,6 +243,11 @@ function App() {
   const location = useLocation();
 
   useEffect(() => {
+    // Prevent browser from restoring previous scroll position on refresh
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+
     if (location.hash) {
       const elementId = location.hash.replace('#', '');
       const element = document.getElementById(elementId);
@@ -251,13 +256,18 @@ function App() {
         setTimeout(() => { element.scrollIntoView({ behavior: 'smooth' }); }, 700);
       }
     } else if (location.pathname === '/') {
-        // Delay scroll ke atas sampai PreLoader selesai (680ms + buffer)
-        setTimeout(() => { window.scrollTo(0, 0); }, 700);
+      // Delay scroll ke atas sampai PreLoader selesai (680ms + buffer)
+      setTimeout(() => { window.scrollTo(0, 0); }, 700);
     }
   }, [location]);
 
   useEffect(() => {
     AOS.init({ duration: 1000, once: true, easing: 'ease-out-cubic' });
+  }, []);
+
+  useEffect(() => {
+    // Ensure the initial view is at the top on first render
+    window.scrollTo(0, 0);
   }, []);
 
   const handleProjectClick = (project) => setSelectedProject(project);
