@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import { Routes, Route, Link, useLocation } from "react-router-dom"; 
+import { Routes, Route, Link, useLocation, useNavigate } from "react-router-dom"; 
 import ProfileCard from "./components/ProfileCard/ProfileCard";
 import ShinyText from "./components/ShinyText/ShinyText";
 import BlurText from "./components/BlurText/BlurText";
@@ -241,11 +241,20 @@ function App() {
   const [selectedProject, setSelectedProject] = useState(null); 
   const [contactSubmitStatus, setContactSubmitStatus] = useState("");
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
-    // Prevent browser from restoring previous scroll position on refresh
+    // Prevent browser restoring scroll position after refresh
     if ('scrollRestoration' in window.history) {
       window.history.scrollRestoration = 'manual';
+    }
+
+    // If this is a refresh (reload) and we're not on home, redirect to home
+    const navEntries = performance.getEntriesByType?.('navigation') || [];
+    const navType = navEntries[0]?.type || (performance.navigation?.type === 1 ? 'reload' : undefined);
+    if (navType === 'reload' && location.pathname !== '/') {
+      navigate('/', { replace: true });
+      return;
     }
 
     if (location.hash) {
@@ -259,7 +268,7 @@ function App() {
       // Delay scroll ke atas sampai PreLoader selesai (680ms + buffer)
       setTimeout(() => { window.scrollTo(0, 0); }, 700);
     }
-  }, [location]);
+  }, [location, navigate]);
 
   useEffect(() => {
     AOS.init({ duration: 1000, once: true, easing: 'ease-out-cubic' });
