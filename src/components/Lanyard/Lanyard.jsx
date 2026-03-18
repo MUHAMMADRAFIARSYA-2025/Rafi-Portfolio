@@ -10,6 +10,10 @@ import './Lanyard.css';
 
 // --- IMPORT FOTO ---
 import rafiImage from '../ProfileCard/rafi.png'; 
+import jsImage from '/assets/tools/js.png';
+import htmlImage from '/assets/tools/html.png';
+import cssImage from '/assets/tools/css.png';
+import reactImage from '/assets/tools/reactjs.png'; 
 
 const cardGLB = "/assets/card.glb"; 
 const lanyard = "/assets/lanyard.png";
@@ -19,6 +23,8 @@ extend({ MeshLineGeometry, MeshLineMaterial });
 export default function Lanyard({ position = [0, 0, 30], gravity = [0, -40, 0], fov = 20, transparent = true }) {
   return (
     <div className="lanyard-wrapper">
+      <div className="lanyard-bg-css"></div>
+      <div className="lanyard-bg-react"></div>
       <Canvas
         camera={{ position: position, fov: fov }}
         gl={{ alpha: transparent }}
@@ -160,7 +166,7 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
       <mesh ref={band}>
         <meshLineGeometry />
         <meshLineMaterial
-          color="white"
+          color="#2a2a2a"
           depthTest={false}
           resolution={isSmall ? [1000, 2000] : [1000, 1000]}
           useMap

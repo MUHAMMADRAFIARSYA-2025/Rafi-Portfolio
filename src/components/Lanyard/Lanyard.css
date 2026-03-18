@@ -9,3 +9,68 @@
   transform: scale(1);
   transform-origin: center;
 }
+
+.lanyard-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 15%;
+  width: 80px;
+  height: 80px;
+  background-image: url('/assets/tools/js.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  z-index: -1;
+  animation: float 6s ease-in-out infinite;
+}
+
+.lanyard-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 60%;
+  right: 20%;
+  width: 70px;
+  height: 70px;
+  background-image: url('/assets/tools/html.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  z-index: -1;
+  animation: float 8s ease-in-out infinite reverse;
+}
+
+.lanyard-bg-css {
+  content: '';
+  position: absolute;
+  top: 40%;
+  left: 10%;
+  width: 65px;
+  height: 65px;
+  background-image: url('/assets/tools/css.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.55;
+  z-index: -1;
+  animation: float 7s ease-in-out infinite;
+}
+
+.lanyard-bg-react {
+  content: '';
+  position: absolute;
+  top: 30%;
+  right: 15%;
+  width: 75px;
+  height: 75px;
+  background-image: url('/assets/tools/reactjs.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.65;
+  z-index: -1;
+  animation: float 9s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
