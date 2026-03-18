@@ -143,7 +143,7 @@ const MainPortfolio = ({ aboutRef, handleInputFocus, handleProjectClick, handleC
         <h1 className="text-5xl font-bold mb-6"><ShinyText text="Hi I'm Muhammad Rafi Arsya" disabled={false} speed={3} /></h1>
         <BlurText text="A passionate Web Developer crafting high-performance, responsive experiences. I specialize exclusively in the web ecosystem, building seamless interfaces and clean, maintainable code that thrives in any browser." delay={150} animateBy="words" direction="top" className="mb-6 text-gray-400" />
         <div className="flex items-center sm:gap-4 gap-2">
-          <a href="./assets/CV.pdf" download="Rafi-Arsya-CV.pdf" className="group font-semibold bg-gradient-to-r from-violet-600 to-purple-600 px-6 py-3 rounded-full border border-violet-500/50 hover:border-violet-400 hover:shadow-lg hover:shadow-violet-500/50 transition-all duration-300 hover:-translate-y-1"><ShinyText text="Download CV" speed={3} /></a>
+          <a href="./assets/CV.pdf" download="Rafi-Arsya-CV.pdf" className="group font-semibold bg-black/40 backdrop-blur px-6 py-3 rounded-full border border-violet-500/30 hover:border-violet-400 hover:bg-violet-500/10 transition-all duration-300 hover:-translate-y-1"><ShinyText text="Download CV" speed={3} /></a>
           <a href="#project" className="group font-semibold bg-black/40 backdrop-blur px-6 py-3 rounded-full border border-violet-500/30 hover:border-violet-400 hover:bg-violet-500/10 transition-all duration-300 hover:-translate-y-1"><ShinyText text="Explore Projects" speed={3} /></a>
         </div>
       </div>
@@ -207,9 +207,9 @@ const MainPortfolio = ({ aboutRef, handleInputFocus, handleProjectClick, handleC
         <Link to="/certificates" className="group font-semibold px-10 py-4 rounded-full border border-violet-500/30 hover:border-violet-400 hover:bg-violet-900/40 transition-all duration-300 hover:-translate-y-1 text-center shadow-lg hover:shadow-violet-500/20">
           <ShinyText text="Professional Certs →" speed={3} />
         </Link>
-        <Link to="/highschool" className="group font-semibold px-10 py-4 rounded-full border border-violet-500/30 hover:border-violet-400 hover:bg-violet-900/40 transition-all duration-300 hover:-translate-y-1 text-center shadow-lg hover:shadow-violet-500/20">
+        {/* <Link to="/highschool" className="group font-semibold px-10 py-4 rounded-full border border-violet-500/30 hover:border-violet-400 hover:bg-violet-900/40 transition-all duration-300 hover:-translate-y-1 text-center shadow-lg hover:shadow-violet-500/20">
           <ShinyText text="High School Certs →" speed={3} />
-        </Link>
+        </Link> */}
       </div>
     </section>
 
@@ -320,7 +320,7 @@ function App() {
       <PreLoader />
       <AIChat />
       <div className="fixed top-0 left-0 w-full h-full -z-10 ">
-        <Aurora colorStops={["#577870", "#1F97A6", "#127B99"]} blend={0.5} amplitude={1.0} speed={0.5} />
+        <Aurora colorStops={["#577870", "#1F97A6", "#127B99"]} blend={0.3} amplitude={0.7} speed={0.3} />
       </div>
       
       <Routes>
