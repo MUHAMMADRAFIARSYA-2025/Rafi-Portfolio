@@ -218,12 +218,12 @@ const MainPortfolio = ({ aboutRef, handleInputFocus, handleProjectClick, handleC
       <div className="flex flex-col md:flex-row gap-8 mt-10">
         <div className="flex-1 bg-zinc-800/50 backdrop-blur-sm p-6 rounded-2xl border border-zinc-700"><ChatRoom /></div>
         <div className="flex-1">
-          <form onSubmit={handleContactSubmit} className="bg-zinc-800/50 backdrop-blur-sm p-10 w-full rounded-2xl border border-zinc-700">
-            <div className="flex flex-col gap-6">
+          <form onSubmit={handleContactSubmit} className="bg-zinc-800/50 backdrop-blur-sm p-4 sm:p-6 md:p-8 lg:p-10 w-full rounded-2xl border border-zinc-700">
+            <div className="flex flex-col gap-4 sm:gap-6">
               <input type="text" name="Name" placeholder="Full Name" className="bg-zinc-900/50 text-white border border-zinc-700 p-3 rounded-xl outline-none" required onFocus={handleInputFocus} />
               <input type="email" name="Email" placeholder="Email" className="bg-zinc-900/50 text-white border border-zinc-700 p-3 rounded-xl outline-none" required onFocus={handleInputFocus} />
               <textarea name="message" rows="5" placeholder="Message..." className="bg-zinc-900/50 text-white border border-zinc-700 p-3 rounded-xl outline-none" required onFocus={handleInputFocus}></textarea>
-              <button type="submit" disabled={contactSubmitStatus === "sending"} className="font-semibold bg-gradient-to-r from-violet-600 to-purple-600 p-4 rounded-xl w-full hover:from-violet-500 hover:to-purple-500 transition-all duration-300 text-white disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg hover:shadow-violet-500/50 hover:-translate-y-0.5">
+              <button type="submit" disabled={contactSubmitStatus === "sending"} className="font-semibold bg-gradient-to-r from-violet-600 to-purple-600 p-3 sm:p-4 rounded-xl w-full hover:from-violet-500 hover:to-purple-500 transition-all duration-300 text-white disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg hover:shadow-violet-500/50 hover:-translate-y-0.5 text-sm sm:text-base">
                 {contactSubmitStatus === "sending" ? "Sending..." : "Send Message"}
               </button>
               {contactSubmitStatus === "success" && <p className="text-green-400 text-sm">✓ Message sent successfully!</p>}
