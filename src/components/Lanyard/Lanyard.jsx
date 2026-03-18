@@ -11,8 +11,8 @@ import './Lanyard.css';
 // --- IMPORT FOTO ---
 import rafiImage from '../ProfileCard/rafi.png'; 
 
-const cardGLB = "/portofolio/assets/card.glb"; 
-const lanyard = "/portofolio/assets/lanyard.png";
+const cardGLB = "/assets/card.glb"; 
+const lanyard = "/assets/lanyard.png";
 
 extend({ MeshLineGeometry, MeshLineMaterial });
 

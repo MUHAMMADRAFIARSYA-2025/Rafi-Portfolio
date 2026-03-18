@@ -22,7 +22,7 @@ Dibuat dengan React + Vite, ini adalah showcase dari project, skill, dan karya y
 
 1. Clone repository ini:
 ```bash
-git clone https://github.com/rissss21/portofolio.git
+git clone https://github.com/MUHAMMADRAFIARSYA-2025/portofolio.git
 cd portofolio
 ````
 
@@ -58,4 +58,4 @@ Saya seorang Developer yang suka bikin aplikasi web ringan dengan tampilan moder
 ---
 
 
-[1]: https://github.com/rissss21/portofolio "GitHub - rissss21/portofolio"
+[1]: https://github.com/MUHAMMADRAFIARSYA-2025/portofolio "GitHub - MUHAMMADRAFIARSYA-2025/portofolio"

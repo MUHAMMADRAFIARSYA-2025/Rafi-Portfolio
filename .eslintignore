@@ -1,0 +1,6 @@
+# Ignore build artifacts, dependencies, and generated assets
+node_modules/
+dist/
+
+# Vite-generated asset bundles (minified JS in src/assets)
+src/assets/

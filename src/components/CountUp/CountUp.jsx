@@ -9,6 +9,7 @@ export default function CountUp({
   duration = 2,
   className = "",
   startWhen = true,
+  observe = true,
   separator = "",
   onStart,
   onEnd,
@@ -24,7 +25,7 @@ export default function CountUp({
     stiffness,
   });
 
-  const isInView = useInView(ref, { once: true, margin: "0px" });
+  const isInView = observe ? useInView(ref, { once: true, margin: "0px" }) : true;
 
   const getDecimalPlaces = (num) => {
     const str = num.toString();
@@ -57,6 +58,20 @@ export default function CountUp({
       }, delay * 1000);
 
       const durationTimeoutId = setTimeout(() => {
+        if (ref.current) {
+          const options = {
+            useGrouping: !!separator,
+            minimumFractionDigits: maxDecimals > 0 ? maxDecimals : 0,
+            maximumFractionDigits: maxDecimals > 0 ? maxDecimals : 0,
+          };
+
+          const formattedFinal = Intl.NumberFormat("en-US", options)
+            .format(direction === "down" ? from : to)
+            .replace(/,/g, separator);
+
+          ref.current.textContent = formattedFinal;
+        }
+
         if (typeof onEnd === "function") onEnd();
       }, delay * 1000 + duration * 1000);
 
