@@ -247,10 +247,12 @@ function App() {
       const elementId = location.hash.replace('#', '');
       const element = document.getElementById(elementId);
       if (element) {
-        setTimeout(() => { element.scrollIntoView({ behavior: 'smooth' }); }, 100);
+        // Delay scroll untuk hash links sampai PreLoader selesai
+        setTimeout(() => { element.scrollIntoView({ behavior: 'smooth' }); }, 700);
       }
     } else if (location.pathname === '/') {
-        window.scrollTo(0, 0); 
+        // Delay scroll ke atas sampai PreLoader selesai (680ms + buffer)
+        setTimeout(() => { window.scrollTo(0, 0); }, 700);
     }
   }, [location]);
 
